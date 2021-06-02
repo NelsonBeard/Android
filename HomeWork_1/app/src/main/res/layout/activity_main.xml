@@ -62,4 +62,53 @@
         android:textColor="#067EE6"
         android:textSize="24sp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="sans-serif"
+            android:hint="name"
+            android:inputType="textPersonName"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="164dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="sans-serif"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/editTextTextPhoneNumber"
+            android:layout_width="212dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="sans-serif"
+            android:hint="phoneNumber"
+            android:inputType="phone"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/editTextTextEmail"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="sans-serif"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+
 </LinearLayout>
+
