@@ -11,12 +11,12 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:textSize="42sp"
         android:background="#000000"
         android:gravity="center"
         android:text="Добрый Вечер!"
         android:textAlignment="center"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="42sp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -25,7 +25,41 @@
         android:ems="10"
         android:fontFamily="cursive"
         android:hint="Напиши что-нибудь"
-        android:inputType="textPersonName"
         android:textSize="42sp" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:backgroundTint="#0C0B0B"
+        android:text="Start" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:soundEffectsEnabled="true"
+        android:text="On/Off"
+        android:textColor="#E1CF1E"
+        android:textSize="35sp" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        android:textSize="35sp"
+        android:fontFamily="cursive"/>
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        android:textColor="#067EE6"
+        android:textSize="24sp" />
 
 </LinearLayout>
