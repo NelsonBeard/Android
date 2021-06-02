@@ -50,9 +50,9 @@
         android:id="@+id/checkBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="cursive"
         android:text="CheckBox"
-        android:textSize="35sp"
-        android:fontFamily="cursive"/>
+        android:textSize="35sp" />
 
     <ToggleButton
         android:id="@+id/toggleButton"
@@ -65,11 +65,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/editTextTextPersonName2"
-            android:layout_width="160dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:fontFamily="sans-serif"
@@ -79,7 +79,7 @@
 
         <EditText
             android:id="@+id/editTextTextPassword"
-            android:layout_width="164dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:fontFamily="sans-serif"
@@ -89,7 +89,7 @@
 
         <EditText
             android:id="@+id/editTextTextPhoneNumber"
-            android:layout_width="212dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:fontFamily="sans-serif"
@@ -99,13 +99,19 @@
 
         <EditText
             android:id="@+id/editTextTextEmail"
-            android:layout_width="230dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:fontFamily="sans-serif"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:textSize="25sp" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
