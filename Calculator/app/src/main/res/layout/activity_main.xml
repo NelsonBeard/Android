@@ -5,16 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity"
+    android:background="@drawable/textile">
 
 
     <TextView
         android:id="@+id/result"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="358dp"
         android:gravity="center|right"
-        android:textSize="60sp"
-        android:text="0" />
+        android:text="0"
+        android:textSize="60sp" />
 
     <include
         layout="@layout/activity_main_table"
