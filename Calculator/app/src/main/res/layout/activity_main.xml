@@ -13,8 +13,8 @@
         android:id="@+id/result"
         android:layout_width="match_parent"
         android:layout_height="358dp"
+        android:background="#FFFFFF"
         android:gravity="center|right"
-        android:text="0"
         android:textSize="60sp" />
 
     <include
