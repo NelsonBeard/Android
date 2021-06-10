@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
+            android:onClick="onOperationClick"
             android:text="@string/_plus"
             android:textSize="20sp" />
     </TableRow>
@@ -95,6 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
+            android:onClick="onOperationClick"
             android:text="@string/_minus"
             android:textSize="20sp" />
     </TableRow>
@@ -142,6 +144,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
+            android:onClick="onOperationClick"
             android:text="@string/_multiplication"
             android:textSize="20sp" />
     </TableRow>
@@ -178,6 +181,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
+            android:onClick="onOperationClick"
             android:text="@string/_division"
             android:textSize="20sp" />
     </TableRow>
@@ -192,7 +196,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
-            android:text="@string/Clear" />
+            android:onClick="onOperationClick"
+            android:text="@string/Clear"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/button_delete"
@@ -200,7 +206,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
-            android:text="@string/delete" />
+            android:onClick="onOperationClick"
+            android:text="@string/delete"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/button_result"
@@ -208,6 +216,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
+            android:onClick="onOperationClickResult"
             android:text="@string/_result"
             android:textSize="20sp" />
 
@@ -217,6 +226,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
-            android:text="@string/negative" />
+            android:onClick="onOperationClick"
+            android:text="@string/negative"
+            android:textSize="20sp" />
     </TableRow>
 </TableLayout>

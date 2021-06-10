@@ -3,16 +3,21 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Locale;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView resultField;
-    private Integer value = null;
+    private Double value1 = null;
+    private Double value2 = null;
+    private Double result = null;
+    private String lastOperation = "=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +36,62 @@ public class MainActivity extends AppCompatActivity {
         Button button9 = findViewById(R.id.button9);
         Button button0 = findViewById(R.id.button0);
 
-        button1.setOnClickListener(v -> resultField.setText(resultField.getText() + "1"));
-        button2.setOnClickListener(v -> resultField.setText(resultField.getText() + "2"));
-        button3.setOnClickListener(v -> resultField.setText(resultField.getText() + "3"));
-        button4.setOnClickListener(v -> resultField.setText(resultField.getText() + "4"));
-        button5.setOnClickListener(v -> resultField.setText(resultField.getText() + "5"));
-        button6.setOnClickListener(v -> resultField.setText(resultField.getText() + "6"));
-        button7.setOnClickListener(v -> resultField.setText(resultField.getText() + "7"));
-        button8.setOnClickListener(v -> resultField.setText(resultField.getText() + "8"));
-        button9.setOnClickListener(v -> resultField.setText(resultField.getText() + "9"));
-        button0.setOnClickListener(v -> resultField.setText(resultField.getText() + "0"));
+        button1.setOnClickListener(v -> onNumberClick(v));
+        button2.setOnClickListener(v -> onNumberClick(v));
+        button3.setOnClickListener(v -> onNumberClick(v));
+        button4.setOnClickListener(v -> onNumberClick(v));
+        button5.setOnClickListener(v -> onNumberClick(v));
+        button6.setOnClickListener(v -> onNumberClick(v));
+        button7.setOnClickListener(v -> onNumberClick(v));
+        button8.setOnClickListener(v -> onNumberClick(v));
+        button9.setOnClickListener(v -> onNumberClick(v));
+        button0.setOnClickListener(v -> onNumberClick(v));
+    }
+    public void onOperationClick(View view) {
+        Button button = (Button) view;
+        lastOperation = button.getText().toString();
+        resultField.append(button.getText());
     }
 
+    public void onOperationClickResult(View view){
+        String value = resultField.getText().toString();
+        String values[] = value.split(Pattern.quote(lastOperation));
+        value1 = Double.valueOf(values[0]);
+        value2 = Double.valueOf(values[1]);
 
+            try{
+                performOperation(value1, value2, lastOperation);
+            }catch (NumberFormatException ex){
+                resultField.setText("");
+            }
+    }
+
+    public void onNumberClick(View view){
+        Button button = (Button)view;
+        resultField.append(button.getText());
+
+    }
+
+    private void performOperation(Double value1, Double value2, String operation) {
+
+        switch (operation) {
+            case "/":
+                if (value2 == 0) {
+                    result = 0.0;
+                } else {
+                    result = value1 / value2;
+                }
+                break;
+            case "*":
+                result = value1 * value2;
+                break;
+            case "+":
+                result = value1 + value2;
+                break;
+            case "-":
+                result = value1 - value2;
+                break;
+        }
+        resultField.setText(result.toString().replace('.', ','));
+    }
 }
