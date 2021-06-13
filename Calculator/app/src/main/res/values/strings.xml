@@ -16,4 +16,7 @@
     <string name="_point">,</string>
     <string name="_result">=</string>
     <string name="_division">/</string>
+    <string name="Clear">C</string>
+    <string name="delete"><![CDATA[<-]]></string>
+    <string name="negative">+/-</string>
 </resources>

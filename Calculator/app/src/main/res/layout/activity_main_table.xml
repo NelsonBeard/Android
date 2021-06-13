@@ -156,7 +156,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/white"
             android:text="@string/_point"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <Button
@@ -164,11 +166,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:layout_weight="1"
+            android:layout_weight="20"
             android:backgroundTint="@color/white"
             android:text="@string/_0"
             android:textColor="@color/black"
             android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button_division"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:text="@string/_division"
+            android:textSize="20sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/button_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:text="@string/Clear" />
+
+        <Button
+            android:id="@+id/button_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:text="@string/delete" />
 
         <Button
             android:id="@+id/button_result"
@@ -180,12 +212,11 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/button_division"
+            android:id="@+id/button_negative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
-            android:text="@string/_division"
-            android:textSize="20sp" />
+            android:text="@string/negative" />
     </TableRow>
 </TableLayout>
