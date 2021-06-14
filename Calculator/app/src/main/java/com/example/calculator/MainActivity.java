@@ -19,6 +19,12 @@ public class MainActivity extends AppCompatActivity {
     Boolean ableToPutPoint2 = true;
     Boolean ableToPutPoint1 = true;
 
+    final String DIVISION = "/";
+    final String MULTIPLICATION = "*";
+    final String PLUS = "+";
+    final String MINUS = "-";
+    final String EQUALS = "=";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onNumberClick(View view) {
         Button button = (Button) view;
-        if (lastOperation == "=") {
+        if (lastOperation == EQUALS) {
             resultField.setText("");
             lastOperation = "";
             ableToPutPoint2 = true;
@@ -89,35 +95,36 @@ public class MainActivity extends AppCompatActivity {
         String value = resultField.getText().toString();
         String values[] = value.split(Pattern.quote(lastOperation));
         if (values.length == 2) {
-            value1 = Double.valueOf(values[0].replace(',', '.'));
-            value2 = Double.valueOf(values[1].replace(',', '.'));
+
             try {
+                value1 = Double.valueOf(values[0].replace(',', '.'));
+                value2 = Double.valueOf(values[1].replace(',', '.'));
                 performOperation(value1, value2, lastOperation);
             } catch (NumberFormatException ex) {
                 resultField.setText("");
             }
         }
-        lastOperation = "=";
+        lastOperation = EQUALS;
         ableToPutPoint1 = false;
     }
 
     private void performOperation(Double value1, Double value2, String operation) {
 
         switch (operation) {
-            case "/":
+            case DIVISION:
                 if (value2 == 0) {
                     result = 0.0;
                 } else {
                     result = value1 / value2;
                 }
                 break;
-            case "*":
+            case MULTIPLICATION:
                 result = value1 * value2;
                 break;
-            case "+":
+            case PLUS:
                 result = value1 + value2;
                 break;
-            case "-":
+            case MINUS:
                 result = value1 - value2;
                 break;
         }
