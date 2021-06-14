@@ -1,14 +1,12 @@
 package com.example.calculator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.Locale;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
     private Double value1 = null;
     private Double value2 = null;
     private Double result = null;
-    private String lastOperation = "=";
+    private String lastOperation = "";
+    Boolean ableToPutPoint2 = true;
+    Boolean ableToPutPoint1 = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Button button8 = findViewById(R.id.button8);
         Button button9 = findViewById(R.id.button9);
         Button button0 = findViewById(R.id.button0);
+        Button button_point = findViewById(R.id.button_point);
 
         button1.setOnClickListener(v -> onNumberClick(v));
         button2.setOnClickListener(v -> onNumberClick(v));
@@ -46,30 +47,58 @@ public class MainActivity extends AppCompatActivity {
         button8.setOnClickListener(v -> onNumberClick(v));
         button9.setOnClickListener(v -> onNumberClick(v));
         button0.setOnClickListener(v -> onNumberClick(v));
+        button_point.setOnClickListener(v -> {
+            ableToPutPoint1 = resultField.getText().toString().endsWith("1") || resultField.getText().toString().endsWith("2") ||
+                    resultField.getText().toString().endsWith("3") || resultField.getText().toString().endsWith("4") ||
+                    resultField.getText().toString().endsWith("5") || resultField.getText().toString().endsWith("6") ||
+                    resultField.getText().toString().endsWith("7") || resultField.getText().toString().endsWith("8") ||
+                    resultField.getText().toString().endsWith("9") || resultField.getText().toString().endsWith("0");
+
+            if (ableToPutPoint1 == true && ableToPutPoint2 == true) {
+                ableToPutPoint2 = false;
+                onNumberClick(v);
+            }
+        });
     }
+
     public void onOperationClick(View view) {
         Button button = (Button) view;
         lastOperation = button.getText().toString();
         resultField.append(button.getText());
+        ableToPutPoint2 = true;
     }
 
-    public void onOperationClickResult(View view){
+    public void onNumberClick(View view) {
+        Button button = (Button) view;
+        if (lastOperation == "=") {
+            resultField.setText("");
+            lastOperation = "";
+            ableToPutPoint2 = true;
+        }
+        resultField.append(button.getText());
+    }
+
+    public void onOperationClickClear(View view) {
+        Button button = (Button) view;
+        resultField.setText("");
+        ableToPutPoint2 = true;
+    }
+
+
+    public void onOperationClickResult(View view) {
         String value = resultField.getText().toString();
         String values[] = value.split(Pattern.quote(lastOperation));
-        value1 = Double.valueOf(values[0]);
-        value2 = Double.valueOf(values[1]);
-
-            try{
+        if (values.length == 2) {
+            value1 = Double.valueOf(values[0].replace(',', '.'));
+            value2 = Double.valueOf(values[1].replace(',', '.'));
+            try {
                 performOperation(value1, value2, lastOperation);
-            }catch (NumberFormatException ex){
+            } catch (NumberFormatException ex) {
                 resultField.setText("");
             }
-    }
-
-    public void onNumberClick(View view){
-        Button button = (Button)view;
-        resultField.append(button.getText());
-
+        }
+        lastOperation = "=";
+        ableToPutPoint1 = false;
     }
 
     private void performOperation(Double value1, Double value2, String operation) {
@@ -93,5 +122,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         resultField.setText(result.toString().replace('.', ','));
+
     }
 }

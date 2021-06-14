@@ -160,6 +160,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin"
             android:layout_weight="1"
+            android:onClick="onNumberClick"
             android:backgroundTint="@color/white"
             android:text="@string/_point"
             android:textColor="@color/black"
@@ -197,7 +198,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin"
             android:layout_weight="1"
-            android:onClick="onOperationClick"
+            android:onClick="onOperationClickClear"
             android:text="@string/Clear"
             android:textSize="@dimen/textSize" />
 
