@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyAppStyle"
+        parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/cardview_light_background</item>
+        <item name="colorPrimaryDark">@color/cardview_dark_background</item>
+        <item name="colorAccent">@color/cardview_shadow_end_color</item>
+    </style>
+</resources>

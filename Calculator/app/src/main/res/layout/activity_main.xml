@@ -15,7 +15,7 @@
         android:layout_height="358dp"
         android:background="#FFFFFF"
         android:gravity="center|right"
-        android:textSize="60sp" />
+        android:textSize="@dimen/resultFieldTextSize" />
 
     <include
         layout="@layout/activity_main_table"
