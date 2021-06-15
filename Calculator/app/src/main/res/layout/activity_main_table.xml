@@ -208,7 +208,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin"
             android:layout_weight="1"
-            android:onClick="onOperationClick"
+            android:onClick="onOperationClickDelete"
             android:text="@string/delete"
             android:textSize="@dimen/textSize" />
 
@@ -228,7 +228,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin"
             android:layout_weight="1"
-            android:onClick="onOperationClick"
+            android:onClick="onOperationClickNegative"
             android:text="@string/negative"
             android:textSize="@dimen/textSize" />
     </TableRow>

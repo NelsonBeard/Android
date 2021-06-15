@@ -1,12 +1,11 @@
 package com.example.calculator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button btnSettings = findViewById(R.id.button_settings);
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent runSettings = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(runSettings);
+            }
+        });
 
         resultField = findViewById(R.id.result);
         Button button1 = findViewById(R.id.button1);
@@ -88,14 +96,22 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button) view;
         resultField.setText("");
         ableToPutPoint2 = true;
+
     }
 
+    public void onOperationClickDelete(View view) {
+        Button button = (Button) view;
+        String str = resultField.getText().toString();
+        if (str.length() != 0) {
+            str = str.substring(0, str.length() - 1);
+            resultField.setText(str);
+        }
+    }
 
     public void onOperationClickResult(View view) {
         String value = resultField.getText().toString();
         String values[] = value.split(Pattern.quote(lastOperation));
         if (values.length == 2) {
-
             try {
                 value1 = Double.valueOf(values[0].replace(',', '.'));
                 value2 = Double.valueOf(values[1].replace(',', '.'));
