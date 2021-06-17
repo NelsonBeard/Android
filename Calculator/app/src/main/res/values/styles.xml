@@ -2,9 +2,15 @@
 <resources>
 
     <style name="MyAppStyle"
-        parent="Theme.AppCompat">
+        parent="Theme.AppCompat.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/cardview_light_background</item>
         <item name="colorPrimaryDark">@color/cardview_dark_background</item>
         <item name="colorAccent">@color/cardview_shadow_end_color</item>
+    </style>
+
+    <style name="SwitchStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">20dp</item>
     </style>
 </resources>

@@ -19,4 +19,8 @@
     <string name="Clear">C</string>
     <string name="delete"><![CDATA[<-]]></string>
     <string name="negative">+/-</string>
+    <string name="_return">Return</string>
+    <string name="_settings">settings</string>
+    <string name="light_theme">Light Theme</string>
+    <string name="dark_theme">Dark Theme</string>
 </resources>
